@@ -1,0 +1,67 @@
+*, html, body{
+    padding: 0;
+    margin: 0;
+}
+
+.notify-container{
+    min-width: 200px;
+    background-color: none;
+    z-index: 9999;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.notify {
+    border: 1px solid grey;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 4px;
+    position: relative;
+    animation: start-slide 1s;
+    cursor: pointer;
+}
+
+.notify:active{
+    transform: scale(0.9);
+}
+
+.notify.success{
+    background-color: rgb(104, 207, 0);
+}
+
+.notify.error{
+    background-color: red;
+    color: white;
+}
+
+.notify.warning{
+    background-color: yellow;
+}
+
+.notify.info{
+    background-color: rgb(6, 255, 213);
+}
+
+
+@keyframes start-slide{
+    0%{
+        right: -300px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+@keyframes end-slide{
+    0%{
+        right: 0px;
+        opacity: 1;
+    }
+
+    100%{
+        right: -300px;
+        opacity: 0;
+    }
+}
